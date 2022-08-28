@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        System.out.println(" араб [2+2] же  римский  [V+V] цифраларын жазгыла");
         Scanner in = new Scanner(System.in);
         String str = in.next();
         int result = 0;
@@ -11,25 +12,32 @@ public class Main {
             numbers = str.split("[+-/*]");
             int c = Integer.parseInt(numbers[0]);
             int d = Integer.parseInt(numbers[1]);
-            if (0 <= c && d <= 10) {
-                if (str.indexOf('+') > 0) {
-                    result = c + d;
-                    System.out.println(result);
-                } else if (str.indexOf('-') > 0) {
-                    result = c - d;
-                    System.out.println(result);
-                } else if (str.indexOf('/') > 0) {
-                    result = c / d;
-                    System.out.println(result);
-                } else if (str.indexOf('*') > 0) {
-                    result = c * d;
-                    System.out.println(result);
-                } else if (true) {
-                    System.out.println("андай чечимдер жараксыз");
-                }
-            } else {
-                System.out.println("калкулятор 1 ден 10 го чейин иштейт");
-            }
+            if (0<=c) {
+                if (c<=10){
+                    if (d>=0) {
+                        if (d <=10){
+                            if (str.indexOf('+') > 0) {
+                                result = c + d;
+                                System.out.println(result);
+                            } else if (str.indexOf('-') > 0) {
+                                result = c - d;
+                                System.out.println(result);
+                            } else if (str.indexOf('/') > 0) {
+                                if (c < d) {
+                                    System.out.println("калкулятор бутун сандар менен иштейт");
+                                } else {
+                                    result = c / d;
+                                }
+                                System.out.println(result);
+                            } else if (str.indexOf('*') > 0) {
+                                result = c * d;
+                                System.out.println(result);
+                            } else if (true) {
+                                System.out.println("андай чечимдер жараксыз");
+                            }
+                    }}} } else {
+
+            }System.out.println("калкулятор 1 ден 10 го чейин иштейт");
         } catch (NumberFormatException e) {
 
             numbers = str.split("[+-/*]");
